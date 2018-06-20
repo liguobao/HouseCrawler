@@ -20,7 +20,7 @@ namespace HouseCrawler.Jobs
             this.lianJiaCrawler = lianJiaCrawler;
         }
 
-        [Invoke(Begin = "2018-05-20 00:00", Interval = 1000 * 3600, SkipWhileExecuting = true)]
+        [Invoke(Begin = "2018-06-20 00:00", Interval = 1000 * 1800, SkipWhileExecuting = true)]
         public void Run()
         {
            lianJiaCrawler.Run();

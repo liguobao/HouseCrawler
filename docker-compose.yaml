@@ -1,0 +1,45 @@
+version: '2'
+
+services:
+
+  elasticsearch:
+    build:
+      context: docker-compose/elasticsearch/
+    volumes:
+      - ./docker-compose/elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
+    networks:
+      - elk
+
+  kibana:
+    build:
+      context: docker-compose/kibana/
+    volumes:
+      - ./docker-compose/kibana/config/:/usr/share/kibana/config:ro
+    ports:
+      - "5601:5601"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+  
+  housecrawler:
+    build:
+      context: ./
+    volumes:
+      - ./docker-compose/housecrawler/appsettings.json/:/app/appsettings.json:ro
+    ports:
+      - "5666:80"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
+networks:
+
+  elk:
+    driver: bridge
