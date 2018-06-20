@@ -42,15 +42,15 @@
 
 ## 效果图
 
-![创建Index](/md-img/index.png)
+![创建Index](./md-img/index.png)
 
-![discover](/md-img/discover.png)
+![discover](./md-img/discover.png)
 
-![records.png](/md-img/records.png)
+![records.png](./md-img/records.png)
 
 ## kibana和Elasticsearch
 
-- kibana用法:[Kibana 用户手册](https://www.elastic.co/guide/cn/kibana/current/index.html)
+- kibana用法:[Kibana 用户手册](https://www.elastic.co/guide/cn/kibana/current/index.html)
 
 - Elasticsearch高级用法见:[Elasticsearch: 权威指南](https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html)
 
