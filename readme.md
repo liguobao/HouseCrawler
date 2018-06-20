@@ -42,11 +42,21 @@
 
 ## 效果图
 
-![创建Index](./md-img/index.png)
+### 创建Index
 
-![discover](./md-img/discover.png)
+![创建Index](/md-img/index.png)
 
-![records.png](./md-img/records.png)
+### discover
+
+![discover](/md-img/discover.png)
+
+### records
+
+![records.png](/md-img/records.png)
+
+### search
+
+![search.png](/md-img/search.png)
 
 ## kibana和Elasticsearch
 
