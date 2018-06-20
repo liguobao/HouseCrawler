@@ -25,7 +25,7 @@ namespace HouseCrawler.Service
         /// </summary>
         /// <param name="listData">要添加的对象</param>
         /// <returns></returns>
-        public void SaveHousesToES(List<BaseHouseInfo> houses)
+        public void SaveHousesToES(List<HouseInfo> houses)
         {
             var connSettings = new ConnectionSettings(new Uri(configuration.ESURL));
             //.BasicAuthentication(configuration.ESUserName, configuration.ESPassword);
@@ -42,9 +42,9 @@ namespace HouseCrawler.Service
                 {
                     //创建索引
                     elasticClient.CreateIndex(houseIndex, i => i
-                       .Settings(s => s.NumberOfShards(2).NumberOfReplicas(0))// 2是常量，阿里云只买了两个片
-                       .Mappings(m => m.Map<BaseHouseInfo>(mm => mm.AutoMap()))
-                       .Mappings(map => map.Map<BaseHouseInfo>(mm => mm)));
+                       .Settings(s => s.NumberOfShards(2).NumberOfReplicas(0))// 2是常量
+                       .Mappings(m => m.Map<HouseInfo>(mm => mm.AutoMap()))
+                       .Mappings(map => map.Map<HouseInfo>(mm => mm)));
                 }
                 //批量创建索引和文档
                 IBulkResponse bulkRs = elasticClient.IndexMany(groupitem, houseIndex);

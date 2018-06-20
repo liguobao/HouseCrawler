@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HouseCrawler.Crawlers;
 using HouseCrawler.Jobs;
 using HouseCrawler.Models;
 using HouseCrawler.Service;
@@ -38,6 +39,7 @@ namespace HouseCrawler
             services.AddTimedJob();
             services.AddSingleton<ElasticsearchService, ElasticsearchService>();
             services.AddSingleton<LianJiaJob, LianJiaJob>();
+            services.AddSingleton<LianJiaCrawler, LianJiaCrawler>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
 

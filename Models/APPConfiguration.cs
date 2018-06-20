@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
+
 namespace HouseCrawler.Models
 {
     public class APPConfiguration
@@ -8,5 +11,7 @@ namespace HouseCrawler.Models
         public string ESUserName { get; set; }
 
         public string ESPassword { get; set; }
+
+        public List<ConfigItem> CityList { get; set; }
     }
 }
